@@ -1,5 +1,17 @@
-const Demo = () => {
-  console.log("B" + "a" + +"n" + "a");
+const mongoose = require("mongoose");
+
+const connectDb = async () => {
+  console.log(process.env.CONNECTION_STRING);
+  try {
+    const connect = await mongoose.connect(process.env.CONNECTION_STRING);
+    console.log(
+      "DataBase connected to mongodb",
+      connect.connection.host,
+      connect.connection.name
+    );
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 };
-module.exports = Demo;
-// https://youtu.be/H9M02of22z4?t=2441
+module.exports = connectDb;
