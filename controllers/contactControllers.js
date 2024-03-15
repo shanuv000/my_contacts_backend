@@ -5,11 +5,12 @@ const Contact = require("../models/contactModel");
 // @access public
 const getContacts = asyncHandler(async (req, res) => {
   const contacts = await Contact.find();
+
   res.status(202).json(contacts);
 });
 
-// @desc create new contacts
 // @desc POST /api/contacts
+// @desc create new contacts
 // @access public
 
 const createContact = asyncHandler(async (req, res) => {
@@ -52,7 +53,7 @@ const updateContact = asyncHandler(async (req, res) => {
     }
   );
   res.status(205).json(updatedContact);
-}); // @desc Delete contact
+}); // @desc Delete contact ୨୧⸝⸝﹕insert txt﹐⊂✦⊃ ‹𝟹
 // @desc DELETE /api/contacts/:id
 // @access public
 const deleteContact = asyncHandler(async (req, res) => {
